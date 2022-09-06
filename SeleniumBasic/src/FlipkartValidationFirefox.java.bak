@@ -1,6 +1,6 @@
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-//new line added to check is it updated in git
+
 public class FlipkartValidationFirefox {
 public static void main(String[] args) {
 	String driverPath=System.getProperty("user.dir")+"\\Executable\\\\geckodriver.exe";
