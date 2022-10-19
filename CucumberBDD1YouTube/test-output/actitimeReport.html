@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Cucumber</title>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<style>
+.cucumber-react .cucumber-status--passed {
+  color: #2CB14A;
+}
+.cucumber-react .cucumber-status--skipped {
+  color: #00A0CC;
+}
+.cucumber-react .cucumber-status--pending {
+  color: #FFAD33;
+}
+.cucumber-react .cucumber-status--undefined {
+  color: #FFAD33;
+}
+.cucumber-react .cucumber-status--ambiguous {
+  color: #F4EBFD;
+}
+.cucumber-react .cucumber-status--failed {
+  color: #BB0000;
+}
+.cucumber-react .cucumber-status--unknown {
+  color: #B6BECB;
+}
+.cucumber-react h1, .cucumber-react h2, .cucumber-react h3 {
+  padding: 0;
+  margin: 0;
+}
+.cucumber-react a {
+  color: inherit;
+}
+.cucumber-react .gherkin-document-list {
+  font: 14px "Open Sans", sans-serif;
+  color: #161C24;
+  background: #fff;
+  overflow-x: hidden;
+}
+.cucumber-react .cucumber-title {
+  margin-top: 0.3em;
+  margin-bottom: 0;
+  display: inline-block;
+}
+.cucumber-react .cucumber-title__keyword {
+  font-weight: bold;
+}
+.cucumber-react .cucumber-title__text {
+  font-weight: normal;
+}
+.cucumber-react .cucumber-tags {
+  padding: 0;
+  margin-bottom: 0;
+}
+.cucumber-react .cucumber-tags .cucumber-tag {
+  display: inline;
+  list-style-type: none;
+  padding: 4px 8px 4px 8px;
+  margin-right: 6px;
+  background-color: #FFFFFF;
+  border-radius: 6px;
+}
+.cucumber-react .cucumber-feature__icon {
+  padding-top: 0.35em;
+  padding-right: 0.5em;
+}
+.cucumber-react .cucumber-description,
+.cucumber-react .cucumber-children {
+  margin-left: 1em;
+}
+.cucumber-react .cucumber-feature,
+.cucumber-react .cucumber-rule,
+.cucumber-react .cucumber-scenario,
+.cucumber-react .cucumber-background {
+  margin-bottom: 1em;
+}
+.cucumber-react .cucumber-steps {
+  list-style-type: none;
+  padding-left: 10px;
+}
+.cucumber-react .cucumber-steps .cucumber-step {
+  display: flex;
+}
+.cucumber-react .cucumber-steps .cucumber-step__status {
+  padding-top: 0.2em;
+  padding-right: 0.5em;
+}
+.cucumber-react .cucumber-steps .cucumber-step__content {
+  flex-grow: 1;
+}
+.cucumber-react .cucumber-steps .cucumber-step__keyword {
+  font-weight: bold;
+}
+.cucumber-react .cucumber-steps .cucumber-step__text {
+  font-weight: normal;
+}
+.cucumber-react .cucumber-steps .cucumber-step__param {
+  font-weight: normal;
+  font-style: italic;
+}
+.cucumber-react .cucumber-table {
+  border-collapse: collapse;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.cucumber-react .cucumber-table__header-cell {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .cucumber-table__cell {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .cucumber-table__cell__status {
+  padding: 0.5em 3px 3px 3px;
+}
+.cucumber-react .cucumber-table__cell__step {
+  flex-grow: 1;
+}
+.cucumber-react .cucumber-code {
+  padding: 0.25em;
+  background-color: #ebebeb;
+}
+.cucumber-react .cucumber-error {
+  padding: 0.5em;
+  margin: 0;
+  overflow: scroll;
+}
+.cucumber-react .cucumber-no-documents {
+  font: 14px "Open Sans", sans-serif;
+}
+.cucumber-react .cucumber-attachment {
+  background-color: #ebebeb;
+  padding: 0.5em;
+}
+.cucumber-react .cucumber-attachment__icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .cucumber-attachment__image {
+  margin-top: 1em;
+}
+.cucumber-react .cucumber-anchor {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 0.3em;
+}
+.cucumber-react .cucumber-anchor__link {
+  opacity: 0;
+  transition: all 0.35s ease-in-out;
+  position: absolute;
+  left: -20px;
+  display: flex;
+  align-items: center;
+}
+.cucumber-react .cucumber-anchor__icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .cucumber-anchor:hover a {
+  opacity: 1;
+  width: max-content;
+  transition: all 0.35s ease-in-out;
+}
+.cucumber-react .cucumber-anchor > * {
+  height: 100%;
+  margin-top: 0px;
+}
+
+.cucumber-report-header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font: 11px "Open Sans", sans-serif;
+  margin-bottom: 1em;
+}
+.cucumber-report-header > * {
+  padding: 1em;
+}
+.cucumber-report-header .cucumber-status-filter {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cucumber-report-header .cucumber-status-filter table {
+  width: 100%;
+}
+.cucumber-report-header .cucumber-execution-data {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cucumber-report-header .cucumber-search-bar {
+  border-right: 0;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 9fr 1fr;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search input {
+  padding: 0.4em;
+  border-radius: 0;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search button {
+  height: 2.2em;
+  padding-left: 0.6em;
+  padding-right: 0.6em;
+}
+.cucumber-report-header .cucumber-search-bar p.help {
+  font-size: 80%;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul {
+  display: inline;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li {
+  list-style-type: none;
+  display: inline-block;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li input {
+  display: inline-block;
+  width: auto;
+  height: 0.6em;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li label {
+  padding-right: 1em;
+}
+
+@media only screen and (min-width: 600px) {
+  .cucumber-report-header {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cucumber-report-header .cucumber-status-filter {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .cucumber-report-header .cucumber-search-bar {
+    grid-column: 1/-1;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .cucumber-report-header {
+    grid-template-columns: 1fr 1fr 2fr;
+  }
+  .cucumber-report-header .cucumber-status-filter {
+    border-bottom: 0;
+  }
+  .cucumber-report-header .cucumber-execution-data {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 0;
+  }
+  .cucumber-report-header .cucumber-search-bar {
+    grid-column: auto;
+  }
+}
+.accordion {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+}
+
+.accordion__item + .accordion__item {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.accordion__button {
+    background-color: #f4f4f4;
+    color: #444;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border: none;
+}
+
+.accordion__button:hover {
+    background-color: #ddd;
+}
+
+.accordion__button:before {
+    display: inline-block;
+    content: '';
+    height: 10px;
+    width: 10px;
+    margin-right: 12px;
+    border-bottom: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: rotate(-45deg);
+}
+
+.accordion__button[aria-expanded='true']::before,
+.accordion__button[aria-selected='true']::before {
+    transform: rotate(45deg);
+}
+
+.accordion__panel {
+    padding: 20px;
+    animation: fadein 0.35s ease-in;
+}
+
+	</style>
+</head>
+<body>
+<div id="content">
+</div>
+<script>
+window.CUCUMBER_MESSAGES = [{"meta":{"protocolVersion":"13.2.1","implementation":{"name":"cucumber-jvm","version":"6.8.1"},"runtime":{"name":"Java HotSpot(TM) 64-Bit Server VM","version":"25.333-b02"},"os":{"name":"Windows 11"},"cpu":{"name":"amd64"}}},{"testRunStarted":{"timestamp":{"seconds":"1665402361","nanos":672000000}}},{"source":{"uri":"file:///D:/JavaProgramsEcllipseNew/CucumberBDD1YouTube/src/main/java/Features/ActTimeTaskCreation.feature","data":"\nFeature: ActiTime task creation\n\n\n  Scenario Outline: ActiTime Task Creation Feature\n    Given user is already on login page og actiTime app\n    When user enter \u003cuname\u003e and \u003cpwd\u003e and click on login\n    Then user should be on home page with \u003ctitle\u003e\n    When user click on task and select create task\n    Then User could add task as \u003ctask\u003e and  click on Create task button\n    Then close browser\n\n    Examples: \n      | uname  | pwd | title  |task|\n      | admin | manager     | actiTIME - Enter Time-Track |Testing123|\n      | admin   | manager   |actiTIME - Enter Time-Track |FrontEnd|\n","mediaType":"text/x.cucumber.gherkin+plain"}},{"gherkinDocument":{"uri":"file:///D:/JavaProgramsEcllipseNew/CucumberBDD1YouTube/src/main/java/Features/ActTimeTaskCreation.feature","feature":{"location":{"line":2,"column":1},"language":"en","keyword":"Feature","name":"ActiTime task creation","children":[{"scenario":{"location":{"line":5,"column":3},"keyword":"Scenario Outline","name":"ActiTime Task Creation Feature","steps":[{"location":{"line":6,"column":5},"keyword":"Given ","text":"user is already on login page og actiTime app","id":"36c6e222-26f0-43d7-a9a5-eee56f671b13"},{"location":{"line":7,"column":5},"keyword":"When ","text":"user enter \u003cuname\u003e and \u003cpwd\u003e and click on login","id":"7ecf8565-3613-45eb-a8a6-364cef6a141f"},{"location":{"line":8,"column":5},"keyword":"Then ","text":"user should be on home page with \u003ctitle\u003e","id":"cf84b0dd-5925-4b8c-8cf8-ed4359681b0f"},{"location":{"line":9,"column":5},"keyword":"When ","text":"user click on task and select create task","id":"e09a5e82-500d-4753-a576-eff36dea8a7e"},{"location":{"line":10,"column":5},"keyword":"Then ","text":"User could add task as \u003ctask\u003e and  click on Create task button","id":"4b7d7ce7-3edb-478d-a9e7-173760b9d97a"},{"location":{"line":11,"column":5},"keyword":"Then ","text":"close browser","id":"e6214278-c2a8-4cff-84ac-b7484353653c"}],"examples":[{"location":{"line":13,"column":5},"keyword":"Examples","tableHeader":{"location":{"line":14,"column":7},"cells":[{"location":{"line":14,"column":9},"value":"uname"},{"location":{"line":14,"column":18},"value":"pwd"},{"location":{"line":14,"column":24},"value":"title"},{"location":{"line":14,"column":32},"value":"task"}],"id":"43398797-a804-4c72-bb40-f7f623868da9"},"tableBody":[{"location":{"line":15,"column":7},"cells":[{"location":{"line":15,"column":9},"value":"admin"},{"location":{"line":15,"column":17},"value":"manager"},{"location":{"line":15,"column":31},"value":"actiTIME - Enter Time-Track"},{"location":{"line":15,"column":60},"value":"Testing123"}],"id":"a94c3c27-cb15-46b6-a549-a820f0705037"},{"location":{"line":16,"column":7},"cells":[{"location":{"line":16,"column":9},"value":"admin"},{"location":{"line":16,"column":19},"value":"manager"},{"location":{"line":16,"column":30},"value":"actiTIME - Enter Time-Track"},{"location":{"line":16,"column":59},"value":"FrontEnd"}],"id":"31dc874b-416d-4a73-92d5-47d1f4622cb5"}],"id":"efa2e777-24bb-4443-b63e-547d1c018afb"}],"id":"d5273ce8-ef5d-4c62-b811-9feb2f309d2c"}}]}}},{"pickle":{"id":"2394c646-e606-44bd-9e18-20ce71c8227a","uri":"file:///D:/JavaProgramsEcllipseNew/CucumberBDD1YouTube/src/main/java/Features/ActTimeTaskCreation.feature","name":"ActiTime Task Creation Feature","language":"en","steps":[{"text":"user is already on login page og actiTime app","id":"20df6208-bf35-4236-b7ef-d454ebbe84d0","astNodeIds":["36c6e222-26f0-43d7-a9a5-eee56f671b13","a94c3c27-cb15-46b6-a549-a820f0705037"]},{"text":"user enter admin and manager and click on login","id":"56ef322a-1df1-4498-9026-b5b2106f9a57","astNodeIds":["7ecf8565-3613-45eb-a8a6-364cef6a141f","a94c3c27-cb15-46b6-a549-a820f0705037"]},{"text":"user should be on home page with actiTIME - Enter Time-Track","id":"3e561d1e-6d7c-4a74-a228-7a41a47df900","astNodeIds":["cf84b0dd-5925-4b8c-8cf8-ed4359681b0f","a94c3c27-cb15-46b6-a549-a820f0705037"]},{"text":"user click on task and select create task","id":"3bd700c0-4e80-41d6-87dc-9658ed73c507","astNodeIds":["e09a5e82-500d-4753-a576-eff36dea8a7e","a94c3c27-cb15-46b6-a549-a820f0705037"]},{"text":"User could add task as Testing123 and  click on Create task button","id":"dc5c3abe-38e3-4756-8e39-86b8281c12b2","astNodeIds":["4b7d7ce7-3edb-478d-a9e7-173760b9d97a","a94c3c27-cb15-46b6-a549-a820f0705037"]},{"text":"close browser","id":"e85c3fef-5389-4b83-a8b0-81acc498f709","astNodeIds":["e6214278-c2a8-4cff-84ac-b7484353653c","a94c3c27-cb15-46b6-a549-a820f0705037"]}],"astNodeIds":["d5273ce8-ef5d-4c62-b811-9feb2f309d2c","a94c3c27-cb15-46b6-a549-a820f0705037"]}},{"pickle":{"id":"27fc9c1a-aad3-4d9d-bb33-6f1d19b23290","uri":"file:///D:/JavaProgramsEcllipseNew/CucumberBDD1YouTube/src/main/java/Features/ActTimeTaskCreation.feature","name":"ActiTime Task Creation Feature","language":"en","steps":[{"text":"user is already on login page og actiTime app","id":"e4e1fa4b-d765-49fd-bcb8-b691c796a52d","astNodeIds":["36c6e222-26f0-43d7-a9a5-eee56f671b13","31dc874b-416d-4a73-92d5-47d1f4622cb5"]},{"text":"user enter admin and manager and click on login","id":"dc70895c-71ec-491b-95ac-0ef66604fb7b","astNodeIds":["7ecf8565-3613-45eb-a8a6-364cef6a141f","31dc874b-416d-4a73-92d5-47d1f4622cb5"]},{"text":"user should be on home page with actiTIME - Enter Time-Track","id":"089336d7-d527-4ecc-a07e-1fdc035d51eb","astNodeIds":["cf84b0dd-5925-4b8c-8cf8-ed4359681b0f","31dc874b-416d-4a73-92d5-47d1f4622cb5"]},{"text":"user click on task and select create task","id":"cbf20f30-bbd2-4d63-9788-b1392000f93f","astNodeIds":["e09a5e82-500d-4753-a576-eff36dea8a7e","31dc874b-416d-4a73-92d5-47d1f4622cb5"]},{"text":"User could add task as FrontEnd and  click on Create task button","id":"e0c8ea08-4087-4ccb-bc18-e1863ce8554c","astNodeIds":["4b7d7ce7-3edb-478d-a9e7-173760b9d97a","31dc874b-416d-4a73-92d5-47d1f4622cb5"]},{"text":"close browser","id":"490e2e68-5d2b-4ab7-a3da-fd98433b1798","astNodeIds":["e6214278-c2a8-4cff-84ac-b7484353653c","31dc874b-416d-4a73-92d5-47d1f4622cb5"]}],"astNodeIds":["d5273ce8-ef5d-4c62-b811-9feb2f309d2c","31dc874b-416d-4a73-92d5-47d1f4622cb5"]}},{"stepDefinition":{"id":"b4efa6e4-f011-41ba-9842-c50044abea89","pattern":{"source":"^user enter (.+) and (.+) and click on login$","type":"REGULAR_EXPRESSION"},"sourceReference":{"javaMethod":{"className":"StepDefinitionActiTime.ActiTimeCreateTask","methodName":"user_enter_and_and_click_on_login","methodParameterTypes":["java.lang.String","java.lang.String"]}}}},{"stepDefinition":{"id":"1d87a0a4-6c19-4b3b-828c-e322c38f5772","pattern":{"source":"^user is already on login page og actiTime app$","type":"REGULAR_EXPRESSION"},"sourceReference":{"javaMethod":{"className":"StepDefinitionActiTime.ActiTimeCreateTask","methodName":"user_is_already_on_login_page_og_actitime_app"}}}},{"stepDefinition":{"id":"5b2c3eb9-c0cc-42b2-bb8a-6f8a1013824f","pattern":{"source":"^close browser$","type":"REGULAR_EXPRESSION"},"sourceReference":{"javaMethod":{"className":"StepDefinitionActiTime.ActiTimeCreateTask","methodName":"close_browser"}}}},{"stepDefinition":{"id":"ca7c81e8-c005-45fb-8178-4f3ea3dfba29","pattern":{"source":"^user should be on home page with (.+)$","type":"REGULAR_EXPRESSION"},"sourceReference":{"javaMethod":{"className":"StepDefinitionActiTime.ActiTimeCreateTask","methodName":"user_should_be_on_home_page_with","methodParameterTypes":["java.lang.String"]}}}},{"stepDefinition":{"id":"6783397e-cf4c-429a-9c50-46c2301f372c","pattern":{"source":"^user click on task and select create task$","type":"REGULAR_EXPRESSION"},"sourceReference":{"javaMethod":{"className":"StepDefinitionActiTime.ActiTimeCreateTask","methodName":"user_click_on_task_and_select_create_task"}}}},{"stepDefinition":{"id":"4eef3925-fadd-4e30-a5eb-150da6e64c16","pattern":{"source":"^User could add task as (.+) and  click on Create task button$","type":"REGULAR_EXPRESSION"},"sourceReference":{"javaMethod":{"className":"StepDefinitionActiTime.ActiTimeCreateTask","methodName":"user_could_add_task_as_and_click_on_create_task_button","methodParameterTypes":["java.lang.String"]}}}},{"stepDefinition":{"id":"2be1aa6d-9151-4f53-8467-066b9acfbd74","pattern":{"source":"^close the browser$","type":"REGULAR_EXPRESSION"},"sourceReference":{"javaMethod":{"className":"StepDefinitionActiTime.ActitmeStepDefinitions","methodName":"closeBrowser"}}}},{"stepDefinition":{"id":"dd41abbc-4eb5-4712-89b6-8b1590e17222","pattern":{"source":"^user should be on homePage title should be (.+)$","type":"REGULAR_EXPRESSION"},"sourceReference":{"javaMethod":{"className":"StepDefinitionActiTime.ActitmeStepDefinitions","methodName":"user_should_be_on_homepage","methodParameterTypes":["java.lang.String"]}}}},{"stepDefinition":{"id":"1d0f385e-7679-4eaa-95b8-45320046a44d","pattern":{"source":"^User is on Actitime login page$","type":"REGULAR_EXPRESSION"},"sourceReference":{"javaMethod":{"className":"StepDefinitionActiTime.ActitmeStepDefinition
